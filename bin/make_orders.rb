@@ -20,9 +20,10 @@ order_number = 30
 order = Order.new(order_number, "Jack Flash")
 order.order_items << OrderItem.new(2, pudding, 0.65)
 order.order_items << OrderItem.new(10, peas, peas.price - 0.1)
-order.complete_xaction
+
 puts order
-puts order.order_items.each {|item| puts item}
+order.complete_xaction
+puts order.show_total_cost
 order_number += 1
 
 
@@ -33,12 +34,12 @@ order2 = Order.new(order_number, "Tom Menino")
 order2.order_items << OrderItem.new(6, milk, milk.price)
 order2.order_items << OrderItem.new(300, peas, peas.price - 0.1)
 order2.order_items << OrderItem.new(7, carrots, carrots.price)
-#order2.complete_xaction
+
 puts order2
-puts order2.order_items.each {|item| item}
+order2.complete_xaction
+puts order2.show_total_cost
 order_number += 1
 
-order.total_cost
 
 
-# puts "Total sales = #{Order.total_sales}"
+

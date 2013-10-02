@@ -40,6 +40,7 @@ order2.complete_xaction
 puts order2.show_total_cost
 order_number += 1
 
+puts "Total costs of all orders = #{Order.total_costs_of_all}"
 
 
 
